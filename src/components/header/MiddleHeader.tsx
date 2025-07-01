@@ -6,6 +6,7 @@ import SearchInput from './SearchInput'
 import Link from 'next/link'
 import { LiaUser } from 'react-icons/lia'
 import HeaderIcons from './HeaderIcons'
+import MobileMenu from './MobileMenu'
 
 
 const MiddleHeader = () => {
@@ -28,6 +29,7 @@ const MiddleHeader = () => {
                 </Link>
                 <HeaderIcons></HeaderIcons>
             </div>
+            <MobileMenu></MobileMenu>
         </Container>
     </div>
   )
