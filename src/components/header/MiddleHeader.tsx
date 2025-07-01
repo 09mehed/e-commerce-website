@@ -5,6 +5,7 @@ import {logo} from '@/assets'
 import SearchInput from './SearchInput'
 import Link from 'next/link'
 import { LiaUser } from 'react-icons/lia'
+import HeaderIcons from './HeaderIcons'
 
 
 const MiddleHeader = () => {
@@ -15,7 +16,7 @@ const MiddleHeader = () => {
                 <Image src={logo } alt='logo' className='w-28'></Image>
             </Link>
             <SearchInput></SearchInput>
-            <div>
+            <div className='hidden md:inline-flex items-center gap-3'>
                 <Link href={'/signin'} className='flex items-center gap-2 cursor-pointer text-sm'>
                     <div className='border-2 border-gray-700 p-1.5 rounded-full text-xl'>
                         <LiaUser></LiaUser>
@@ -25,6 +26,7 @@ const MiddleHeader = () => {
                         <p className='font-medium'>Login / Register</p>
                     </div>
                 </Link>
+                <HeaderIcons></HeaderIcons>
             </div>
         </Container>
     </div>
