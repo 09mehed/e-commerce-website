@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
+import { twMerge } from 'tailwind-merge'
 
-const SocialLinks = () => {
+const SocialLinks = ({className, iconStyle}: {className?:string; iconStyle?:string}) => {
 
     const linksData = [
         {icon: <FaGithub></FaGithub>, href: "https://github.com/09mehed"},
@@ -16,7 +17,7 @@ const SocialLinks = () => {
     <div className='text-xl pt-2 text-white/50 flex items-center gap-x-2'>
         {
             linksData?.map((item, index) => (
-                <Link key={index} href={item?.href} target='blank' className='border border-white/20 inline-flex p-2 rounded-full hover:text-[#0989ff] duration-300 cursor-pointer'>
+                <Link key={index} href={item?.href} target='blank' className={twMerge("border border-white/20 inline-flex p-2 rounded-full hover:text-[#0989ff] duration-300 cursor-pointer", iconStyle)}>
                     {item?.icon}
                 </Link>
             ))
