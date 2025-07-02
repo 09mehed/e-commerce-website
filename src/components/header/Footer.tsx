@@ -8,6 +8,7 @@ import Title from '../Title'
 import { navigation } from '@/constants'
 import { GoDotFill } from 'react-icons/go'
 import { BsEnvelopeAt } from 'react-icons/bs'
+import { GrLocation } from 'react-icons/gr'
 
 const Footer = () => {
   return (
@@ -48,6 +49,9 @@ const Footer = () => {
               <div className='mt-3'>
                 <p className='text-base flex items-center gap-x-3 text-gray-600'>
                   <BsEnvelopeAt></BsEnvelopeAt> shofy@support.com
+                </p>
+                <p className='text-base flex items-center gap-x-3 text-gray-600'>
+                  <GrLocation></GrLocation> Dhaka, Bangladesh
                 </p>
               </div>
             </div>
