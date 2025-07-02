@@ -19,7 +19,7 @@ const ProductCard = ({product}: {product: ProductType}) => {
         </Link>
         <Sidebar></Sidebar>
         <div className='border-t border-t-[#eaebed] py-3 px-4 flex flex-col justify-between h-40'>
-
+            
         </div>
     </div>
   )
