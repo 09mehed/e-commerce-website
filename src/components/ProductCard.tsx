@@ -9,7 +9,7 @@ import AddToCartButton from './AddToCartButton'
 const ProductCard = ({product}: {product: ProductType}) => {
   return (
     <div className='border border-gray-400 hover:shadow-lg hover:shadow-black/30 duration-200 rounded-md group overflow-hidden relative'>
-        <Link href={'/products'}>
+        <Link href={`/products/${product?.id}`}>
             <Image 
                 src={product?.images[0]}
                 alt='product-image'
@@ -29,7 +29,10 @@ const ProductCard = ({product}: {product: ProductType}) => {
             </h2>
             <ProductPrice product={product}></ProductPrice>
         </div>
-        <AddToCartButton></AddToCartButton>
+        <AddToCartButton product={product}></AddToCartButton>
+        <div>
+            
+        </div>
     </div>
   )
 }
