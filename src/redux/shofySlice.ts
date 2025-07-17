@@ -24,9 +24,21 @@ export const shofySlice = createSlice({
             }else{
                 state.cart.push({...action.payload, quantity: 1})
             }
+        },
+        increaseQuantity: (state, action) => {
+            const existingProduct = state?.cart?.find((item) => item?.id === action.payload);
+            if(existingProduct){
+                existingProduct.quantity! += 1
+            }
+        },
+        decreaseQuantity: (state, action) => {
+            const existingProduct = state?.cart?.find((item) => item?.id === action.payload);
+            if(existingProduct){
+                existingProduct.quantity! -= 1
+            }
         }
     }
 })
 
-export const { addToCart } = shofySlice.actions
+export const { addToCart, increaseQuantity, decreaseQuantity } = shofySlice.actions
 export default shofySlice.reducer
