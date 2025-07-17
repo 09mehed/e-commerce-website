@@ -19,7 +19,7 @@ const ProductCard = ({product}: {product: ProductType}) => {
             ></Image>
             <p className='absolute top-2 right-2 bg-orange-500 text-white text-xs py-1 px-2 rounded-lg'>{product?.discountPercentage}</p>
         </Link>
-        <Sidebar></Sidebar>
+        <Sidebar product={product}></Sidebar>
         <div className='border-t border-t-[#eaebed] py-5 px-4 flex flex-col justify-between h-30'>
             <p className='text-sm font-medium text-[#55585b] capitalize'>
                 {product?.category}

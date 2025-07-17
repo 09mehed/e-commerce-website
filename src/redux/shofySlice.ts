@@ -36,9 +36,27 @@ export const shofySlice = createSlice({
             if(existingProduct){
                 existingProduct.quantity! -= 1
             }
+        },
+        removeFromCart: (state, action) => {
+            state.cart = state.cart.filter((item) => item?.id === action.payload)
+        },
+        resetCart: (state) => {
+            state.cart = []
+        },
+        addToFavorite: (state, action) => {
+            const existingProduct = state?.favorite?.find((item) => item?.id === action.payload?.id);
+
+            if(existingProduct){
+                state.favorite = state.favorite.filter((item) => item?.id !== action.payload.id)
+            }else{
+                state.favorite.push(action.payload)
+            }
+        },
+        resetFavorite: (state) => {
+            state.favorite = []
         }
     }
 })
 
-export const { addToCart, increaseQuantity, decreaseQuantity } = shofySlice.actions
+export const { addToCart, increaseQuantity, decreaseQuantity, removeFromCart, resetCart, addToFavorite, resetFavorite } = shofySlice.actions
 export default shofySlice.reducer
