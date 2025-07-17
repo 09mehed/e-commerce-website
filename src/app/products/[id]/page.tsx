@@ -19,7 +19,6 @@ interface Props {
 
 export default async function singleProductPage({ params }: Props) {
     const product: ProductType = await getData(`https://dummyjson.com/products/${params.id}`)
-    console.log(params.id);
     return (
         <Container className='py-10 grid grid-cols-1 md:grid-cols-2 gap-10'>
             <ProductImages images={product?.images} />

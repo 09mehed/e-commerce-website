@@ -3,6 +3,6 @@ import shofyReducer from './shofySlice'
 
 export const store = configureStore({
   reducer: {
-    shofy: shofyReducer
+    shopy: shofyReducer,
   },
 })
