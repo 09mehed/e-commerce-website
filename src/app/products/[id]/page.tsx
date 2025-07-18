@@ -48,7 +48,7 @@ export default async function singleProductPage({ params }: Props) {
                     <FaRegEye className='mr-1'></FaRegEye>{""}
                     <span className='font-semibold mr-1'>250+</span> peoples are viewing this right now
                 </p>
-                <p>You are saving <PriceFormate amount={product?.discountPercentage / 100} className='text-base font-semibold text-green-500'></PriceFormate> upon purchase</p>
+                <p>You are saving <PriceFormate amount={product?.price * (product?.discountPercentage / 100)} className='text-base font-semibold text-green-500'></PriceFormate> upon purchase</p>
                 <div>
                     <p className='text-sm tracking-wide'>{product?.description}</p>
                     <p className='text-base'>{product?.warrantyInformation}</p>

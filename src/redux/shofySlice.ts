@@ -38,7 +38,7 @@ export const shofySlice = createSlice({
             }
         },
         removeFromCart: (state, action) => {
-            state.cart = state.cart.filter((item) => item?.id === action.payload)
+            state.cart = state.cart.filter((item) => item?.id !== action.payload)
         },
         resetCart: (state) => {
             state.cart = []

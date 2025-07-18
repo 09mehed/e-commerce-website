@@ -29,7 +29,6 @@ const AddToCartButton = ({ product, className }: { product: ProductType; classNa
 
   return (
     <>
-
       {
         existingProduct ? <div className='flex self-start items-center justify-center gap-2 py-2 mb-2'>
           <button
