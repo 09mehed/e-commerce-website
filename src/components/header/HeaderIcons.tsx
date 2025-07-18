@@ -18,7 +18,7 @@ const HeaderIcons = () => {
               {favorite?.length > 0 ? favorite?.length: "0"}
             </span>
         </Link>
-        <Link href={'/shopping'} className='text-xl relative'>
+        <Link href={'/cart'} className='text-xl relative'>
             <BiShoppingBag></BiShoppingBag>
             <span className='absolute -top-1 -right-1 text-[10px] font-medium w-4 h-4 bg-[#0C55AA] text-white rounded-full flex items-center justify-center'>
               {cart?.length > 0 ? cart?.length: "0"}
