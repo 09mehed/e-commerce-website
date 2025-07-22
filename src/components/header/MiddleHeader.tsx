@@ -4,9 +4,9 @@ import Image from 'next/image'
 import {logo} from '@/assets'
 import SearchInput from './SearchInput'
 import Link from 'next/link'
-import { LiaUser } from 'react-icons/lia'
 import HeaderIcons from './HeaderIcons'
 import MobileMenu from './MobileMenu'
+import SignUpButton from '../SignUpButton'
 
 
 const MiddleHeader = () => {
@@ -18,15 +18,7 @@ const MiddleHeader = () => {
             </Link>
             <SearchInput></SearchInput>
             <div className='hidden md:inline-flex items-center gap-3'>
-                <Link href={'/signin'} className='flex items-center gap-2 cursor-pointer text-sm'>
-                    <div className='border-2 border-gray-700 p-1.5 rounded-full text-xl'>
-                        <LiaUser></LiaUser>
-                    </div>
-                    <div className=''>
-                        <p className='text-xs'>Hello, Guest</p>
-                        <p className='font-medium'>Login / Register</p>
-                    </div>
-                </Link>
+                <SignUpButton></SignUpButton>
                 <HeaderIcons></HeaderIcons>
             </div>
             <MobileMenu></MobileMenu>
