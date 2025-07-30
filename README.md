@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### ShopyFy Website
 
-## Getting Started
+# Shopy is a modern e-commerce web application built using Next.js. It features product listing, detailed product pages, shopping cart functionality, and a responsive user interface. The site is optimized for performance, SEO-friendly, and supports dynamic routing for a seamless user experience.
 
-First, run the development server:
+## Technologies Used:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Next.js
+# React
+# TypeScript
+# Tailwind CSS
+# Redux Toolkit (or Zustand, if applicable)
+# JSON/REST API for product data
+# React Hot Toast (for notifications)\
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What the Shopy Website Does:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# ✅ Displays a banner on the homepage to highlight promotions or branding.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# ✅ Loads and displays products dynamically from a local JSON file or API.
 
-## Learn More
+# ✅ Filters products by category using buttons or tabs.
 
-To learn more about Next.js, take a look at the following resources:
+# ✅ Shows product details on a separate page when clicked.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# ✅ Adds products to the cart using a localStorage-based system.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# ✅ Displays selected cart items in the dashboard/cart section.
 
-## Deploy on Vercel
+# ✅ Calculates total price of all cart items dynamically.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# ✅ Handles purchase flow using a modal popup with purchase summary.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# ✅ Clears the cart after purchase and updates the cart button with the total price.
+
+# ✅ Navigates between pages smoothly using Next.js routing system.
+
+# ✅ Maintains responsive design for mobile and desktop users.
+
+# ✅ Shows toast notifications for actions like adding to cart or purchasing.
