@@ -3,16 +3,19 @@ import Title from '../Title'
 import PriceFormate from '../PriceFormate'
 import { ProductType } from '../../../type'
 import Button from '../Button';
-import toast from 'react-hot-toast';
+import { useSession } from 'next-auth/react';
+import { loadStripe } from '@stripe/stripe-js';
 
 interface Props {
   cart: ProductType[];
 }
 
-const CartSummary = ({cart}: Props) => {
+const CartSummary =({cart}: Props) => {
 
   const [totalAmount, setTotalAmount] = useState(0)
   const [discountAmount, setDiscountAmount] = useState(0)
+
+  const { data:session } = useSession()
 
   useEffect(() => {
     let amount = 0;
@@ -20,14 +23,30 @@ const CartSummary = ({cart}: Props) => {
 
     cart.map((item) => {
       amount += item?.price * item.quantity!;
-      discount += ((item?.price * item.quantity!)  / 100 * item.quantity)
+      discount += ((item?.price * item.discountPercentage)  / 100) * item.quantity!;
     })
     setTotalAmount(amount)
     setDiscountAmount(discount)
   },[cart])
 
-  const handleCheckOut = () => {
-    toast.success("checkout is coming soon")
+  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+
+  const handleCheckOut = async() => {
+    const stripe = await stripePromise;
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        items: cart,
+        email: session?.user?.email
+      })
+    })
+    const checkOutSession = await res.json()
+    await stripe ?.redirectToCheckout({
+      sessionId: checkOutSession?.id,
+    })
   }
 
   return (
