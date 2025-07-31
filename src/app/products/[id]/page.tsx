@@ -12,14 +12,14 @@ import { payment } from '@/assets'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-interface PageProps  {
-    params: {
-        id: string
-    }
-}
+type Props = {
+  params: {
+    id: string;
+  };
+};
 
-export default async function Page({ params }: PageProps) {
-    const product: ProductType = await getData(`https://dummyjson.com/products/${params.id}`)
+export default async function Page({ params }: Props) {
+    const product: ProductType | null = await getData(`https://dummyjson.com/products/${params.id}`)
 
     if(!product) return notFound();
 
