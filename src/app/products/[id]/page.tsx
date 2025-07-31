@@ -10,15 +10,19 @@ import PriceFormate from '@/components/PriceFormate'
 import AddToCartButton from '@/components/AddToCartButton'
 import { payment } from '@/assets'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
-type Props = {
+interface PageProps  {
     params: {
         id: string
     }
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: PageProps) {
     const product: ProductType = await getData(`https://dummyjson.com/products/${params.id}`)
+
+    if(!product) return notFound();
+
     return (
         <Container className='py-10 grid grid-cols-1 md:grid-cols-2 gap-10'>
             <ProductImages images={product?.images} />
