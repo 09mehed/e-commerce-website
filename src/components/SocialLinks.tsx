@@ -3,7 +3,7 @@ import React from 'react'
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
 import { twMerge } from 'tailwind-merge'
 
-const SocialLinks = ({className, iconStyle}: {className?:string; iconStyle?:string}) => {
+const SocialLinks = ({iconStyle}: {className?:string; iconStyle?:string}) => {
 
     const linksData = [
         {icon: <FaGithub></FaGithub>, href: "https://github.com/09mehed"},
