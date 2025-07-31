@@ -11,7 +11,7 @@ import AddToCartButton from '@/components/AddToCartButton'
 import { payment } from '@/assets'
 import Image from 'next/image'
 
-interface Props {
+type Props = {
     params: {
         id: string
     }
