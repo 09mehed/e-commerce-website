@@ -11,13 +11,13 @@ import AddToCartButton from '@/components/AddToCartButton'
 import { payment } from '@/assets'
 import Image from 'next/image'
 
-interface Props {
+interface PageProps {
     params: {
         id: string
     }
 }
 
-export default async function singleProductPage({ params }: Props) {
+export default async function singleProductPage({ params }: PageProps) {
     const product: ProductType = await getData(`https://dummyjson.com/products/${params.id}`)
     return (
         <Container className='py-10 grid grid-cols-1 md:grid-cols-2 gap-10'>
