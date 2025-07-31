@@ -4,7 +4,7 @@ import { ProductType } from "../../type";
 interface initialState{
     cart: ProductType[];
     favorite: ProductType[];
-    userInfo: any;
+    userInfo: unknown | null;
 }
 
 const initialState: initialState = {

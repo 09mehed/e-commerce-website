@@ -2,7 +2,8 @@
 import Container from '@/components/Container'
 import { resetCart } from '@/redux/shofySlice'
 import Link from 'next/link'
-import { redirect, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
@@ -12,14 +13,17 @@ const SuccessPage = () => {
     const sessionId = searchParams.get("session_id")
     const dispatch = useDispatch()
 
-    !sessionId && redirect('/')
+    const router = useRouter();
 
-    useEffect(() => {
-        if(sessionId){
-            dispatch(resetCart())
-            toast.success("Payment received successfully")
-        }
-    }, [sessionId, dispatch])
+  useEffect(() => {
+    if (!sessionId) {
+      router.push('/');
+      return;
+    }
+
+    dispatch(resetCart());
+    toast.success("Payment received successfully");
+  }, [sessionId, dispatch, router]);
   return (
     <Container className='py-10'>
         <div className='min-h-[400px] flex flex-col items-center justify-center gap-5'>
