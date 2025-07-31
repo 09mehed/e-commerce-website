@@ -18,7 +18,7 @@ type Props = {
   };
 };
 
-export default async function Page({ params }: Props) {
+export default async function SingleProductPage({ params }: Props) {
     const product: ProductType | null = await getData(`https://dummyjson.com/products/${params.id}`)
 
     if(!product) return notFound();
